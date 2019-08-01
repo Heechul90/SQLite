@@ -84,7 +84,7 @@ for row in cur:
 cur = conn.cursor()
 cur.execute('SELECT * FROM Eagles')
 row = cur.fetchone()
-
+print(row)
 
 # 다건 조회
 rows = cur.fetchmany(2)
