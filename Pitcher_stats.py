@@ -46,3 +46,5 @@ for i in range(25):
                       int(pitchers.iloc[i, 4]),
                       int(pitchers.iloc[i, 5])))
 conn.commit()
+
+
