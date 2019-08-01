@@ -2,38 +2,36 @@
 ## 데이터베이스 접속
 
 import sqlite3
-conn = sqlite3.connect(':memory:') # 메모리 DB 접속(일회성) conn = sqlite3.connect(‘./test.db') # 파일 DB 접속(일회성)
-. . .
-데이터 쿼리 수행
-. . .
-conn.commit() # 변경사항 저장
-conn.close()
+
+conn = sqlite3.connect('./test.db')
+'''
+conn = sqlite3.connect(':memory:')    # 메모리 DB 접속(일회성)
+'''
 
 
 ## with 문 이용
-import sqlite3
-conn = sqlite3.connect('./test.db')
-
-with conn:
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM test_table')
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+# import sqlite3
+# conn = sqlite3.connect('./test.db')
+#
+# with conn:
+#     cur = conn.cursor()
+#     cur.execute('SELECT * FROM test_table')
+#     rows = cur.fetchall()
+#     for row in rows:
+#         print(row)
 
 
 ### 3. Data Definition Language(DDL)
 ## 테이블 생성
 cur = conn.cursor()
-cur.execute('CREATE TABLE IF NOT EXISTS Eagles
-(backNo INT NOT NULL,
-name TEXT,
-position TEXT,
-hands TEXT,
-height TEXT,
-weight TEXT,
-PRIMARY KEY(backNo));'')
-
+cur.execute('CREATE TABLE IF NOT EXISTS Eagles \
+    (backNo INT NOT NULL, \
+     name TEXT, \
+     position TEXT, \
+     hands TEXT, \
+     height INT, \
+     weight INT, \
+     PRIMARY KEY(backNo));')
 
 ## 테이블 변경
 cur.execute('ALTER TABLE Eagles ADD COLUMN birth INTEGER')
@@ -49,26 +47,48 @@ cur.execute('DROP TABLE Eagles')
 ## 데이터 삽입
 # 기본 스트링 쿼리
 cur = conn.cursor()
-cur.execute("INSERT INTO Eagles VALUES(8, '정근우', '외야수', 172, 75);")
-cur.execute("INSERT INTO Eagles VALUES(57, '정우람', '투수', 181, 82), (99, '류현진', '투수', 190, 115);")
+cur.execute("INSERT INTO Eagles VALUES(8, '정근우', '외야수', '우투우타', 172, 75);")
+cur.execute("INSERT INTO Eagles VALUES(57, '정우람', '투수', '좌투좌타', 181, 82), \
+                                      (99, '류현진', '투수', '좌투우타', 190, 115);")
+conn.commit()     # 변경사항 저장
+
+
+# 파일에서 읽어서 데이터베이스에 쓰기
+import pandas as pd
+players = pd.read_csv('Resource/players.csv', encoding = 'EUC-KR')
+
+cur = conn.cursor()
+sql = 'INSERT INTO Eagles VALUES (?, ?, ?, ?, ?, ?);'
+for i in range(10):
+    cur.execute(sql, (int(players.iloc[i, 0]),
+                      players.iloc[i, 1],
+                      players.iloc[i, 2],
+                      players.iloc[i, 3],
+                      int(players.iloc[i, 4]),
+                      int(players.iloc[i, 5])))
+conn.commit()
+conn.close()
 
 
 # 파라메터: 튜플 사용
-back_no = 50
+backNo = 50
 name = '이성열'
 position = '외야수'
+hands = '좌투좌타'
 height = 185
 weight = 102
 cur = conn.cursor()
-sql = 'INSERT INTO Eagles VALUES (?, ?, ?, ?, ?);'
-cur.execute(sql, (back_no, name, position, height, weight))
+sql = 'INSERT INTO Eagles VALUES (?, ?, ?, ?, ?, ?);'
+cur.execute(sql, (backNo, name, position, hands, height, weight))
+conn.commit()
 
 
 # 튜플 리스트 사용
-players = ((22, '이태양', '투수', 192, 97), (12, '김창혁', '포수', 179, 79))
+players = ((22, '이태양', '투수', '우투우타', 192, 97), (12, '김창혁', '포수', '우투우타', 179, 79))
 cur = conn.cursor()
-sql = 'INSERT INTO Eagles VALUES (?, ?, ?, ?, ?);'
+sql = 'INSERT INTO Eagles VALUES (?, ?, ?, ?, ?, ?);'
 cur.executemany(sql, players)
+conn.commit()
 
 
 
@@ -98,7 +118,7 @@ for row in rows:
 
 # 필요한 column만 조회
 cur = conn.cursor()
-cur.execute('SELECT name FROM Eagles WHERE back_no > 10')
+cur.execute('SELECT name FROM Eagles WHERE backNo > 10')
 rows = cur.fetchall();
 for row in rows:
     print(row)
@@ -109,7 +129,7 @@ cur.execute('SELECT * FROM Eagles ORDER BY name')
 cur.execute('SELECT * FROM Eagles ORDER BY name DESC')
 cur.execute('SELECT * FROM Eagles ORDER BY name DESC LIMIT 1')
 row = cur.fetchone()
-print(row[1]) # '하주석'
+print(row[1])          # '호잉'
 
 
 
@@ -117,7 +137,7 @@ print(row[1]) # '하주석'
 cur.execute('SELECT count(*) FROM Eagles')
 count = cur.fetchone()
 
-max(column), min(column), sum(column), avg(column)
+max(height), min(height), sum(height), avg(height)
 
 
 
@@ -125,15 +145,16 @@ max(column), min(column), sum(column), avg(column)
 
 # 기본 스트링 쿼리
 cur = conn.cursor()
-cur.execute("SELECT * FROM Eagles WHERE position='내야수';") rows = cur.fetchall();
+cur.execute("SELECT * FROM Eagles WHERE position='내야수';")
+rows = cur.fetchall();
 for row in rows:
     print(row)
 
 
 # Placeholder
-cur = con.cursor()
-back_no = 50
-cur.execute('SELECT * FROM Eagles WHERE back_no=?;', (back_no,))
+cur = conn.cursor()
+backNo = 50
+cur.execute('SELECT * FROM Eagles WHERE backNo=?;', (backNo,))
 player = cur.fetchone()
 print(player[0])            # 50
 
@@ -146,15 +167,16 @@ sql = 'SELECT position, count(*) FROM Eagles GROUP BY position'
 ## 데이터 변경
 position = '외야수'
 back_no = 8
-cur.execute('UPDATE Eagles SET position=? WHERE back_no=?;',
-            (position, back_no))
-cur.execute('SELECT * FROM Eagles WHERE back_no=?‘, (back_no,))
+cur.execute('UPDATE Eagles SET position=? WHERE backNo=?;',
+            (position, backNo))
+cur.execute('SELECT * FROM Eagles WHERE backNo=?‘, (backNo,))
 cur.fetchone()
 data = ((1995,1), (1986,57))
-sql = 'UPDATE Eagles SET position=? WHERE back_no=?'
+sql = 'UPDATE Eagles SET position=? WHERE backNo=?'
 cur.executedmany(sql, data)
 
 
 
 ## 데이터 삭제
-cur = con.cursor() cur.execute('DELETE FROM Eagles WHERE back_no=1);')
+cur = conn.cursor()
+cur.execute('DELETE FROM Eagles WHERE backNo=1);')
