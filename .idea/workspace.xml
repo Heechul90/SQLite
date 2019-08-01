@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="01ed426d-ffeb-457d-ba06-8f7d8eefb743" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pitcher_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pitcher_stats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.db" beforeDir="false" afterPath="$PROJECT_DIR$/Test.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idols.py" beforeDir="false" afterPath="$PROJECT_DIR$/idols.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pitcher_stats.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/Sqlite3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/idols.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/pitchers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/players.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/players.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resource/songs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idols.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,35 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="49" column="75" lean-forward="true" selection-start-line="49" selection-end-line="49" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pitcher_stats.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="47" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/idols.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,15 +36,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/Pitcher_stats.py" />
         <option value="$PROJECT_DIR$/idols.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/Eagles.py" />
+        <option value="$PROJECT_DIR$/Pitcher_stats.py" />
+        <option value="$PROJECT_DIR$/Idols/idols.py" />
+        <option value="$PROJECT_DIR$/Eagles/asdf.py" />
+        <option value="$PROJECT_DIR$/Eagles/Eagles.py" />
+        <option value="$PROJECT_DIR$/Eagles/Pitcher_stats.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1163" />
-    <option name="height" value="1034" />
+    <option name="x" value="-7" />
+    <option name="width" value="1063" />
+    <option name="height" value="1041" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -79,6 +64,11 @@
             <path>
               <item name="SQLite3" type="b2602c69:ProjectViewProjectNode" />
               <item name="SQLite3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SQLite3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SQLite3" type="462c0819:PsiDirectoryNode" />
+              <item name="Eagles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -117,10 +107,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1163" height="1034" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1063" height="1041" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2515611" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19725221" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -133,31 +122,54 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.3295583" />
+      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.45526615" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/idols.py" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/Eagles.py" />
+    <entry file="file://$PROJECT_DIR$/Pitcher_stats.py" />
+    <entry file="file://$PROJECT_DIR$/Eagles/asdf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="49" column="75" lean-forward="true" selection-start-line="49" selection-end-line="49" selection-end-column="75" />
+        <state relative-caret-position="2500">
+          <caret line="100" column="27" lean-forward="true" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
+          <folding>
+            <element signature="e#12#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pitcher_stats.py">
+    <entry file="file://$PROJECT_DIR$/Eagles/Eagles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="47" selection-end-column="13" />
+        <state relative-caret-position="254">
+          <caret line="236" column="12" lean-forward="true" selection-start-line="236" selection-start-column="12" selection-end-line="236" selection-end-column="12" />
+          <folding>
+            <element signature="e#12#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/idols.py">
+    <entry file="file://$PROJECT_DIR$/Eagles/Pitcher_stats.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        <state relative-caret-position="225">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="e#57#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Idols/idols.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1303">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#57#71#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
