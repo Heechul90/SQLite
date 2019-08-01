@@ -7,7 +7,7 @@
 - 모바일 기기에서 많이 활용되고 있음
 - 파이썬3에 기본 내장되어 있음
 - 파일 또는 메모리에 DB 생성
-- [참고자료:](https://wikidocs.net/book/1530)SQLite로 가볍게 배우는 데이터베이스 (WikiDocs)
+- [참고자료:](https://wikidocs.net/book/1530) SQLite로 가볍게 배우는 데이터베이스 (WikiDocs)
 
  ## 1.2 데이터 타입
 - 동적 데이터 타입
